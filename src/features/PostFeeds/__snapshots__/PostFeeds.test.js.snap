@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PostFeeds component tests. PostFeeds component renders correctly. 1`] = `
+<div
+  className="container-fluid video-player"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="row vr-gallery"
+    >
+      <div
+        className="col-md-12 text-center"
+      >
+        <a
+          className="btn"
+          href="/#"
+        >
+          LOAD MORE
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;

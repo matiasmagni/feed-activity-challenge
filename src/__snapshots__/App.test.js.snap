@@ -1,0 +1,229 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component tests. App component renders correctly. 1`] = `
+Array [
+  <header
+    className="mt-0 pt-0"
+  >
+    <div
+      className="bg-cover clearfix pt-3"
+    >
+      <h2
+        className="logo"
+      >
+        Shahala
+      </h2>
+      <input
+        className="form-control nav-search mx-auto"
+        id="nav-search"
+        name=""
+        type="text"
+      />
+      <div
+        className="ml-0 mr-0 pb-1"
+      >
+        <nav
+          className="navbar navbar-expand-md"
+        >
+          <button
+            aria-controls="my-nav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            className="navbar-toggler ml-auto"
+            data-target="#my-nav"
+            data-toggle="collapse"
+          >
+            <span
+              className="bar1"
+            />
+             
+            <span
+              className="bar2"
+            />
+             
+            <span
+              className="bar3"
+            />
+          </button>
+          <div
+            className="collapse navbar-collapse"
+            id="my-nav"
+          >
+            <ul
+              className="navbar-nav mx-auto"
+            >
+              <li
+                className="nav-item"
+              >
+                <a
+                  className="nav-link"
+                  href="/"
+                  onClick={[Function]}
+                >
+                  Home
+                </a>
+              </li>
+              <li
+                className="nav-item"
+              >
+                <form
+                  action=""
+                  method="POST"
+                >
+                  <div
+                    className="input-group mt-0 mx-auto"
+                    style={
+                      Object {
+                        "width": 16,
+                      }
+                    }
+                  >
+                    <div
+                      className=""
+                    >
+                      <img
+                        alt="search icon"
+                        className="ml-2 toggle-search"
+                        id="toggle-search"
+                        src="/images/search-icon.png"
+                      />
+                    </div>
+                  </div>
+                </form>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>,
+  <div
+    className="container-fluid video-player"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="row vr-gallery"
+      >
+        <div
+          className="col-md-12 text-center"
+        >
+          <a
+            className="btn"
+            href="/#"
+          >
+            LOAD MORE
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <footer
+    className="container-fluid pt-5"
+  >
+    <div
+      className="container"
+    >
+      <h2
+        className="logo text-center"
+      >
+        Shahala
+      </h2>
+      <nav
+        className="nav nav-fill mx-auto mt-5"
+      >
+        <li
+          className="nav-item"
+        >
+          <a
+            className="nav-link"
+            href="https://facebook.com/fh5co"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <i
+              className="fab fa-facebook-f"
+            />
+          </a>
+        </li>
+        <li
+          className="nav-item"
+        >
+          <a
+            className="nav-link"
+            href="https://facebook.com/fh5co"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <i
+              className="fab fa-twitter"
+            />
+          </a>
+        </li>
+        <li
+          className="nav-item"
+        >
+          <a
+            className="nav-link"
+            href="/#"
+          >
+            <i
+              className="fab fa-instagram"
+            />
+          </a>
+        </li>
+        <li
+          className="nav-item"
+        >
+          <a
+            className="nav-link"
+            href="/#"
+          >
+            <i
+              className="fab fa-google-plus-g"
+            />
+          </a>
+        </li>
+        <li
+          className="nav-item"
+        >
+          <a
+            className="nav-link"
+            href="/#"
+          >
+            <i
+              className="fas fa-rss"
+            />
+          </a>
+        </li>
+      </nav>
+    </div>
+    <div
+      className="copyright mt-4"
+    >
+      <p
+        className="text-center"
+      >
+        © 2019 
+        <a
+          className="text-white"
+          href="/#"
+        >
+          Shahala
+        </a>
+        . All Rights Reserved. Design by 
+        <a
+          className="text-white"
+          href="https://freehtml5.co/shahala"
+          rel="noreferrer"
+          target="_blank"
+        >
+          FreeHTML5.co
+        </a>
+        .
+      </p>
+    </div>
+  </footer>,
+]
+`;

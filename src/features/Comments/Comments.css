@@ -1,0 +1,23 @@
+label {
+    display: inline-flex;
+}
+
+label * {
+    margin-left: 5px;
+    width: 620px;
+    margin-bottom: 20px;
+}
+
+.input-name {
+    width: 620px;
+}
+
+.input-email {
+    width: 623px;
+}
+
+.comments {
+    width: 591px;
+    height: 120px;
+}
+
