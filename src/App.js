@@ -12,7 +12,6 @@ import './App.css';
 const App = () => {
   return (
     <Router>
-
       <header className="mt-0 pt-0">
         <div className="bg-cover clearfix pt-3">
           <h2 className="logo">Shahala</h2>
@@ -45,7 +44,6 @@ const App = () => {
           </div>
         </div>
       </header>
-
       <Switch>
         <Route exact path="/">
           <Home />
@@ -54,7 +52,6 @@ const App = () => {
           <Comments />
         </Route>
       </Switch>
-
     </Router>
   );
 }

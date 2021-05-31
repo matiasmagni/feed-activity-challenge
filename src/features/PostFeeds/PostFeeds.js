@@ -9,7 +9,8 @@ const PostFeeds = () => {
 
     useEffect(() => {
         const fetchPosts = async () => {
-            const result = await axios(config.API_URL.POSTS);
+            const result = await axios.get(config.API_URL.POSTS);
+            console.log(result.data);
             setPosts(result.data);
         };
 
@@ -28,7 +29,6 @@ const PostFeeds = () => {
                                         <img src="images/gallery-img1.png" alt="" />
                                     </div>
                                     <div className="col-md-12 col-lg-5 light-bg cus-pd cus-arrow-left">
-                                        <p><small>march 27, 2020</small></p>
                                         <h3>{post.title}</h3>
                                         <p>{post.body}</p>
                                     </div>
@@ -47,9 +47,6 @@ const PostFeeds = () => {
                             </div>
                         </div>
                     ))}
-                    <div className="col-md-12 text-center">
-                        <a href="/#" className="btn">LOAD MORE</a>
-                    </div>
                 </div>
             </div>
         </div>

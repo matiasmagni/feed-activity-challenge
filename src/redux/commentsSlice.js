@@ -7,10 +7,10 @@ export const commentsSlice = createSlice({
     },
     reducers: {
         setAllComments: (state, action) => {
-            state.comments = action.payload.comments;
+            state.comments.push(action.payload.comments);
         },
         addComment: (state, action) => {
-            state.comments = [...state.comments, action.payload.comment];
+            state.comments.push(action.payload);
         },
     }
 });

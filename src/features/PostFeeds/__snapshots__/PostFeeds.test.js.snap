@@ -9,18 +9,7 @@ exports[`PostFeeds component tests. PostFeeds component renders correctly. 1`] =
   >
     <div
       className="row vr-gallery"
-    >
-      <div
-        className="col-md-12 text-center"
-      >
-        <a
-          className="btn"
-          href="/#"
-        >
-          LOAD MORE
-        </a>
-      </div>
-    </div>
+    />
   </div>
 </div>
 `;

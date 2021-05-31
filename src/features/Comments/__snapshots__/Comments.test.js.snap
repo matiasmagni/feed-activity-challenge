@@ -16,6 +16,64 @@ Object {
           >
             <div
               class="col-md-8 mb-4"
+              id="user-comment"
+            >
+              <div
+                class="row"
+              >
+                <div
+                  class="col-md-12 col-lg-12 light-bg cus-pd cus-arrow-left"
+                >
+                  <h3>
+                    Leave a comment here:
+                  </h3>
+                  <form>
+                    <label>
+                      Name:
+                      <input
+                        class="input-name"
+                        data-testid="inputName"
+                        id="name"
+                        name="name"
+                        type="text"
+                        value=""
+                      />
+                    </label>
+                    <label>
+                      Email:
+                      <input
+                        class="input-email"
+                        data-testid="inputEmail"
+                        id="email"
+                        name="email"
+                        type="email"
+                        value=""
+                      />
+                    </label>
+                    <label>
+                      Comment:
+                      <textarea
+                        class="comments"
+                        data-testid="inputComments"
+                      />
+                    </label>
+                    <div
+                      class="submit-container"
+                    >
+                      <input
+                        data-testid="buttonPublish"
+                        id="addComment"
+                        name="addComment"
+                        type="submit"
+                        value="Publish"
+                      />
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div
+              class="col-md-8 mb-4"
               id="comments"
             />
           </div>
@@ -33,6 +91,64 @@ Object {
         <div
           class="row vr-gallery"
         >
+          <div
+            class="col-md-8 mb-4"
+            id="user-comment"
+          >
+            <div
+              class="row"
+            >
+              <div
+                class="col-md-12 col-lg-12 light-bg cus-pd cus-arrow-left"
+              >
+                <h3>
+                  Leave a comment here:
+                </h3>
+                <form>
+                  <label>
+                    Name:
+                    <input
+                      class="input-name"
+                      data-testid="inputName"
+                      id="name"
+                      name="name"
+                      type="text"
+                      value=""
+                    />
+                  </label>
+                  <label>
+                    Email:
+                    <input
+                      class="input-email"
+                      data-testid="inputEmail"
+                      id="email"
+                      name="email"
+                      type="email"
+                      value=""
+                    />
+                  </label>
+                  <label>
+                    Comment:
+                    <textarea
+                      class="comments"
+                      data-testid="inputComments"
+                    />
+                  </label>
+                  <div
+                    class="submit-container"
+                  >
+                    <input
+                      data-testid="buttonPublish"
+                      id="addComment"
+                      name="addComment"
+                      type="submit"
+                      value="Publish"
+                    />
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
           <div
             class="col-md-8 mb-4"
             id="comments"
