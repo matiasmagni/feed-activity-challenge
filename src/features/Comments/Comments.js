@@ -89,7 +89,7 @@ const Comments = () => {
                                     </label>
                                     <label>
                                         Comment:
-                                        <textarea data-testid="inputComments" className="comments" value={commentTextValue} onChange={changeComment} />
+                                        <textarea data-testid="inputComments" id="comments" className="comments" value={commentTextValue} onChange={changeComment} />
                                     </label>
                                     <div className="submit-container">
                                         <input data-testid="buttonPublish" id="addComment" name="addComment" type="submit" value="Publish" />
@@ -103,9 +103,9 @@ const Comments = () => {
                             {comments.map(comment => (
                                 <div key={`comment-${comment.id}`} className="row">
                                     <div className="col-md-12 col-lg-12 light-bg cus-pd cus-arrow-left">
-                                        <h3>{comment.name}</h3>
-                                        <h6>{comment.email}</h6>
-                                        <p>{comment.body}</p>
+                                        <h3 className="commentName">{comment.name}</h3>
+                                        <h6 className="commentEmail">{comment.email}</h6>
+                                        <p className="commentBody">{comment.body}</p>
                                     </div>
                                 </div>
                             ))}

@@ -29,8 +29,8 @@ const PostFeeds = () => {
                                         <img src="images/gallery-img1.png" alt="" />
                                     </div>
                                     <div className="col-md-12 col-lg-5 light-bg cus-pd cus-arrow-left">
-                                        <h3>{post.title}</h3>
-                                        <p>{post.body}</p>
+                                        <h3 className="postTitle">{post.title}</h3>
+                                        <p className="postBody">{post.body}</p>
                                     </div>
                                 </div>
                             </div>
@@ -38,7 +38,7 @@ const PostFeeds = () => {
                                 <div className="card">
                                     <img className="card-img h-100" src="images/video-cover1.jpg" alt="" />
                                     <div className="card-img-overlay opacity text-center">
-                                        <Link className="play-1" to={`/comments/${post.id}`}>
+                                        <Link id={`commentLink-${post.id}`} className="play-1" to={`/comments/${post.id}`}>
                                             <i className="fas fa-comments fa-2x"></i>
                                         </Link>
                                         <h5 className="card-title">View all comments...</h5>
