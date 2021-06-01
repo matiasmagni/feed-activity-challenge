@@ -6,7 +6,7 @@ import { fireEvent, waitFor, screen } from '@testing-library/dom'
 import { act as domAct } from "react-dom/test-utils";
 import { act as testAct } from "react-test-renderer";
 import renderWithRouter from '../../__mocks__/renderWithRouter';
-import { store } from '../../redux/store';
+import store from'../../redux/store';
 import Comments from './Comments';
 import { cleanup } from '@testing-library/react';
 import config from '../../config';
@@ -69,40 +69,43 @@ afterEach(cleanup);
 
 describe('Comments component tests.', () => {
   it('Comments component renders correctly.', async () => {
-    let tree;
+    let commentsComponent;
 
     domAct(() => {
       testAct(() => {
-        tree = renderWithRouter(<Provider store={store}><Comments /></Provider>, '/comments/1');
+        commentsComponent = renderWithRouter(<Provider store={store}><Comments /></Provider>, '/comments/1');
         mockGetPost.onGet(`${config.API_URL.POSTS}/1`).reply(200, postApiData);
         mockGetPost.onGet(`${config.API_URL.COMMENTS}?postId=1`).reply(200, commentsApiData);
       });
     });
 
-    await expect(tree).toMatchSnapshot();
+    const { asFragment } = commentsComponent;
+    await expect(asFragment()).toMatchSnapshot();
   });
 
   it('User adds a comment after filling all fields.', async () => {
-    const { getByTestId, findByText } = renderWithRouter(<Provider store={store}><Comments /></Provider>, '/comments/1');
-    mockGetPost.onGet(`${config.API_URL.POSTS}/1`).reply(200, postApiData);
-    mockGetPost.onGet(`${config.API_URL.COMMENTS}?postId=1`).reply(200, commentsApiData);
+    testAct(() => {
+      const { getByTestId, findByText } = renderWithRouter(<Provider store={store}><Comments /></Provider>, '/comments/1');
+      mockGetPost.onGet(`${config.API_URL.POSTS}/1`).reply(200, postApiData);
+      mockGetPost.onGet(`${config.API_URL.COMMENTS}?postId=1`).reply(200, commentsApiData);
 
-    for (let elementName of ['Name', 'Email', 'Comments']) {
-      fireEvent.change(getByTestId(`input${elementName}`), {
-        target: {
-          value: validValues[elementName.toLowerCase]
-        }
-      });
-    }
-    
-    fireEvent.click(getByTestId('buttonPublish'));
-    
-    setTimeout(() => {
-      for (let i in validValues) {
-        expect(findByText(validValues[i])).toBeInTheDocument();
+      for (let elementName of ['Name', 'Email', 'Comments']) {
+        fireEvent.change(getByTestId(`input${elementName}`), {
+          target: {
+            value: validValues[elementName.toLowerCase]
+          }
+        });
       }
-    }, 1000);
+      
+      fireEvent.click(getByTestId('buttonPublish'));
 
-    jest.runAllTimers();
+      setTimeout(() => {
+        for (let i in validValues) {
+          expect(findByText(validValues[i])).toBeInTheDocument();
+        }
+      }, 1000);
+  
+      jest.runAllTimers();
+    });
   });
 });

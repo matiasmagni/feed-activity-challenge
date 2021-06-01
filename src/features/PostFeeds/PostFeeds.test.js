@@ -1,19 +1,17 @@
 import React from 'react';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
-import { Router } from 'react-router';
 import { createMemoryHistory } from "history";
 import { cleanup } from '@testing-library/react';
 import { act as domAct } from "react-dom/test-utils";
 import { Provider } from 'react-redux';
 import { act as testAct, create } from "react-test-renderer";
-import { store } from '../../redux/store';
+import store from'../../redux/store';
 import PostFeeds from './PostFeeds';
 import config from '../../config';
 import renderWithRouter from '../../__mocks__/renderWithRouter';
 
 const mockGetPosts = new MockAdapter(axios);
-const history = createMemoryHistory();
 
 const postApiData = [
   {
@@ -34,25 +32,32 @@ afterEach(cleanup);
 
 describe('PostFeeds component tests.', () => {
   it('PostFeeds component renders correctly.', () => {
-    let tree;
-    mockGetPosts.onGet(config.API_URL.POSTS).reply(200, postApiData);
+    let postFeeds = null;
 
     domAct(() => {
       testAct(() => {
-        tree = create(<Provider store={store}><Router history={history}><PostFeeds /></Router></Provider>);
+        postFeeds = renderWithRouter(<Provider store={store}><PostFeeds /></Provider>);
+        mockGetPosts.onGet(config.API_URL.POSTS).reply(200, postApiData);
       });
     });
 
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = postFeeds;
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('PostFeeds render all posts from API correctly.', async () => {
-    const { findByText } = renderWithRouter(<Provider store={store}><PostFeeds /></Provider>);
-    mockGetPosts.onGet(config.API_URL.POSTS).reply(200, postApiData);
+    let postFeedsComponent = null;
+
+    testAct(() => {
+      postFeedsComponent = renderWithRouter(<Provider store={store}><PostFeeds /></Provider>);
+      mockGetPosts.onGet(config.API_URL.POSTS).reply(200, postApiData);
+    });
+
+    const { findByText } = postFeedsComponent;
 
     for (let data of postApiData) {
       for (let field of ['title', 'body']) {
-        expect(await findByText((content) => content.includes(data[field].substring(0, 15)))).toBeInTheDocument();
+        expect(await findByText(content => content.includes(data[field].substring(0, 15)))).toBeInTheDocument();
       }
     }
   });

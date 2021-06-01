@@ -1,214 +1,81 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Comments component tests. Comments component renders correctly. 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        class="container-fluid video-player"
-      >
-        <div
-          class="container"
-        >
-          <div
-            class="row vr-gallery"
-          >
-            <div
-              class="col-md-8 mb-4"
-              id="user-comment"
-            >
-              <div
-                class="row"
-              >
-                <div
-                  class="col-md-12 col-lg-12 light-bg cus-pd cus-arrow-left"
-                >
-                  <h3>
-                    Leave a comment here:
-                  </h3>
-                  <form>
-                    <label>
-                      Name:
-                      <input
-                        class="input-name"
-                        data-testid="inputName"
-                        id="name"
-                        name="name"
-                        type="text"
-                        value=""
-                      />
-                    </label>
-                    <label>
-                      Email:
-                      <input
-                        class="input-email"
-                        data-testid="inputEmail"
-                        id="email"
-                        name="email"
-                        type="email"
-                        value=""
-                      />
-                    </label>
-                    <label>
-                      Comment:
-                      <textarea
-                        class="comments"
-                        data-testid="inputComments"
-                        id="comments"
-                      />
-                    </label>
-                    <div
-                      class="submit-container"
-                    >
-                      <input
-                        data-testid="buttonPublish"
-                        id="addComment"
-                        name="addComment"
-                        type="submit"
-                        value="Publish"
-                      />
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-            <div
-              class="col-md-8 mb-4"
-              id="comments"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
+<DocumentFragment>
+  <div
+    class="container-fluid video-player"
+  >
     <div
-      class="container-fluid video-player"
+      class="container"
     >
       <div
-        class="container"
+        class="row vr-gallery"
       >
         <div
-          class="row vr-gallery"
+          class="col-md-8 mb-4"
+          id="user-comment"
         >
           <div
-            class="col-md-8 mb-4"
-            id="user-comment"
+            class="row"
           >
             <div
-              class="row"
+              class="col-md-12 col-lg-12 light-bg cus-pd cus-arrow-left"
             >
-              <div
-                class="col-md-12 col-lg-12 light-bg cus-pd cus-arrow-left"
-              >
-                <h3>
-                  Leave a comment here:
-                </h3>
-                <form>
-                  <label>
-                    Name:
-                    <input
-                      class="input-name"
-                      data-testid="inputName"
-                      id="name"
-                      name="name"
-                      type="text"
-                      value=""
-                    />
-                  </label>
-                  <label>
-                    Email:
-                    <input
-                      class="input-email"
-                      data-testid="inputEmail"
-                      id="email"
-                      name="email"
-                      type="email"
-                      value=""
-                    />
-                  </label>
-                  <label>
-                    Comment:
-                    <textarea
-                      class="comments"
-                      data-testid="inputComments"
-                      id="comments"
-                    />
-                  </label>
-                  <div
-                    class="submit-container"
-                  >
-                    <input
-                      data-testid="buttonPublish"
-                      id="addComment"
-                      name="addComment"
-                      type="submit"
-                      value="Publish"
-                    />
-                  </div>
-                </form>
-              </div>
+              <h3>
+                Leave a comment here:
+              </h3>
+              <form>
+                <label>
+                  Name:
+                  <input
+                    class="input-name"
+                    data-testid="inputName"
+                    id="name"
+                    name="name"
+                    type="text"
+                    value=""
+                  />
+                </label>
+                <label>
+                  Email:
+                  <input
+                    class="input-email"
+                    data-testid="inputEmail"
+                    id="email"
+                    name="email"
+                    type="email"
+                    value=""
+                  />
+                </label>
+                <label>
+                  Comment:
+                  <textarea
+                    class="comments"
+                    data-testid="inputComments"
+                    id="comments"
+                  />
+                </label>
+                <div
+                  class="submit-container"
+                >
+                  <input
+                    data-testid="buttonPublish"
+                    id="addComment"
+                    name="addComment"
+                    type="submit"
+                    value="Publish"
+                  />
+                </div>
+              </form>
             </div>
           </div>
-          <div
-            class="col-md-8 mb-4"
-            id="comments"
-          />
         </div>
+        <div
+          class="col-md-8 mb-4"
+          id="comments"
+        />
       </div>
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</DocumentFragment>
 `;

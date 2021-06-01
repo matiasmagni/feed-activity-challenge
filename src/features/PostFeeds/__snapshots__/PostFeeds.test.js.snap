@@ -1,15 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PostFeeds component tests. PostFeeds component renders correctly. 1`] = `
-<div
-  className="container-fluid video-player"
->
+<DocumentFragment>
   <div
-    className="container"
+    class="container-fluid video-player"
   >
     <div
-      className="row vr-gallery"
-    />
+      class="container"
+    >
+      <div
+        class="row vr-gallery"
+      />
+    </div>
   </div>
-</div>
+</DocumentFragment>
 `;

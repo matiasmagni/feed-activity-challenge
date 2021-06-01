@@ -10,7 +10,6 @@ const PostFeeds = () => {
     useEffect(() => {
         const fetchPosts = async () => {
             const result = await axios.get(config.API_URL.POSTS);
-            console.log(result.data);
             setPosts(result.data);
         };
 
