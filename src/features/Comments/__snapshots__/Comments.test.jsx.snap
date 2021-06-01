@@ -25,36 +25,43 @@ exports[`Comments component tests. Comments component renders correctly. 1`] = `
                 Leave a comment here:
               </h3>
               <form>
-                <label>
+                <label
+                  for="name"
+                  type="control"
+                >
                   Name:
-                  <input
-                    class="input-name"
-                    data-testid="inputName"
-                    id="name"
-                    name="name"
-                    type="text"
-                    value=""
-                  />
                 </label>
-                <label>
+                <input
+                  class="input-name"
+                  data-testid="inputName"
+                  id="name"
+                  name="name"
+                  type="text"
+                  value=""
+                />
+                <label
+                  for="email"
+                >
                   Email:
-                  <input
-                    class="input-email"
-                    data-testid="inputEmail"
-                    id="email"
-                    name="email"
-                    type="email"
-                    value=""
-                  />
                 </label>
-                <label>
+                <input
+                  class="input-email"
+                  data-testid="inputEmail"
+                  id="email"
+                  name="email"
+                  type="email"
+                  value=""
+                />
+                <label
+                  for="comments"
+                >
                   Comment:
-                  <textarea
-                    class="comments"
-                    data-testid="inputComments"
-                    id="comments"
-                  />
                 </label>
+                <textarea
+                  class="comments"
+                  data-testid="inputComments"
+                  id="comments"
+                />
                 <div
                   class="submit-container"
                 >

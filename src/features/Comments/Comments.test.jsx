@@ -2,9 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import { Provider } from 'react-redux';
-import {
-  fireEvent, describe, it, afterEach, beforeEach,
-} from '@testing-library/dom';
+import { fireEvent } from '@testing-library/dom';
 import { act as domAct } from 'react-dom/test-utils';
 import { act as testAct } from 'react-test-renderer';
 import { cleanup } from '@testing-library/react';
@@ -85,29 +83,29 @@ describe('Comments component tests.', () => {
     await expect(asFragment()).toMatchSnapshot();
   });
 
-  it('User adds a comment after filling all fields.', async () => {
-    testAct(() => {
-      const { getByTestId, findByText } = renderWithRouter(<Provider store={store}><Comments /></Provider>, '/comments/1');
-      mockGetPost.onGet(`${config.API_URL.POSTS}/1`).reply(200, postApiData);
-      mockGetPost.onGet(`${config.API_URL.COMMENTS}?postId=1`).reply(200, commentsApiData);
+  it('User adds a comment after filling all fields.', () => {
+    const { getByTestId, findByText } = renderWithRouter(<Provider store={store}><Comments /></Provider>, '/comments/1');
+    mockGetPost.onGet(`${config.API_URL.POSTS}/1`).reply(200, postApiData);
+    mockGetPost.onGet(`${config.API_URL.COMMENTS}?postId=1`).reply(200, commentsApiData);
 
-      ['Name', 'Email', 'Comments'].forEach((elementName) => {
-        fireEvent.change(getByTestId(`input${elementName}`), {
-          target: {
-            value: validValues[elementName.toLowerCase],
-          },
-        });
+    ['Name', 'Email', 'Comments'].forEach((elementName) => {
+      fireEvent.change(getByTestId(`input${elementName}`), {
+        target: {
+          value: validValues[elementName.toLowerCase],
+        },
+      });
+    });
+
+    fireEvent.click(getByTestId('buttonPublish'));
+
+    setTimeout(() => {
+      Object.keys(validValues).forEach((i) => {
+        expect(findByText(validValues[i])).toBeInTheDocument();
       });
 
-      fireEvent.click(getByTestId('buttonPublish'));
+      expect(findByText('Comment was added successfully!')).toBeVisible();
+    }, 1000);
 
-      setTimeout(() => {
-        Object.keys(validValues).forEach((i) => {
-          expect(findByText(validValues[i])).toBeInTheDocument();
-        });
-      }, 1000);
-
-      jest.runAllTimers();
-    });
+    jest.runAllTimers();
   });
 });

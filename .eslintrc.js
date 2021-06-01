@@ -60,5 +60,16 @@ module.exports = {
             ],
             "depth": 3,
         }],
-    }
+    },
+    "overrides": [
+        {
+          "files": [
+            "**/*.spec.js",
+            "**/*.spec.jsx"
+          ],
+          "env": {
+            "jest": true
+          }
+        }
+      ]
 };

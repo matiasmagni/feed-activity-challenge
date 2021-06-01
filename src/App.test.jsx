@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  cleanup, afterEach, describe, it, expect,
-} from '@testing-library/react';
+import { cleanup } from '@testing-library/react';
 import { act as domAct } from 'react-dom/test-utils';
 import { Provider } from 'react-redux';
 import { act as testAct, create } from 'react-test-renderer';
