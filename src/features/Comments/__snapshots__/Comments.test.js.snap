@@ -55,6 +55,7 @@ Object {
                       <textarea
                         class="comments"
                         data-testid="inputComments"
+                        id="comments"
                       />
                     </label>
                     <div
@@ -132,6 +133,7 @@ Object {
                     <textarea
                       class="comments"
                       data-testid="inputComments"
+                      id="comments"
                     />
                   </label>
                   <div

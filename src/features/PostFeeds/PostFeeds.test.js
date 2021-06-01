@@ -46,7 +46,7 @@ describe('PostFeeds component tests.', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('PostFeeds render all post from API correctly.', async () => {
+  it('PostFeeds render all posts from API correctly.', async () => {
     const { findByText } = renderWithRouter(<Provider store={store}><PostFeeds /></Provider>);
     mockGetPosts.onGet(config.API_URL.POSTS).reply(200, postApiData);
 
