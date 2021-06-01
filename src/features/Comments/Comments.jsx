@@ -9,6 +9,7 @@ import './Comments.css';
 const Comments = () => {
   const { postId } = useParams();
   const dispatch = useDispatch();
+  const [message, setMessage] = useState('');
   const [post, setPost] = useState(null);
   const [comments, setComments] = useState(
     useSelector(selectComments).filter((comment) => comment.postId === Number(postId)),
@@ -57,6 +58,10 @@ const Comments = () => {
 
     dispatch(addComment(newComment));
     setComments([...comments, newComment]);
+    setNameInputValue('');
+    setEmailInputValue('');
+    setCommentTextValue('');
+    setMessage('Comment was added successfully!');
   };
 
   return (
@@ -91,6 +96,7 @@ const Comments = () => {
                   <div className="submit-container">
                     <input data-testid="buttonPublish" id="addComment" name="addComment" type="submit" value="Publish" />
                   </div>
+                  { message && <p className="message">{message}</p>}
                 </form>
               </div>
             </div>

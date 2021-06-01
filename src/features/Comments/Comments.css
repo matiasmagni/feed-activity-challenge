@@ -1,27 +1,31 @@
 label {
     display: inline-flex;
+    vertical-align: top;
 }
 
-label * {
+input, textarea {
     margin-left: 5px;
-    width: 620px;
     margin-bottom: 20px;
 }
 
 .input-name {
-    width: 599px;
+    width: 598px;
 }
 
 .input-email {
-    width: 602px;
+    width: 601px;
 }
 
 .comments {
-    width: 570px;
+    width: 569px;
     height: 120px;
 }
 
 .submit-container {
     text-align: right;
     margin-bottom: 10px;
+}
+
+.message {
+    text-align: right;
 }
