@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 import config from '../../config';
 import { selectComments, addComment } from '../../redux/commentsSlice';
+import { isEmailValid } from '../../utils/validators';
 import './Comments.css';
 
 const Comments = () => {
@@ -17,6 +18,8 @@ const Comments = () => {
   const [nameInputValue, setNameInputValue] = useState('');
   const [emailInputValue, setEmailInputValue] = useState('');
   const [commentTextValue, setCommentTextValue] = useState('');
+  // Format: array [isErrorMessage, message]
+  const [emailErrorMsg, setEmailErrorMsg] = useState([false, '']);
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -38,7 +41,12 @@ const Comments = () => {
   };
 
   const changeEmail = (event) => {
-    setEmailInputValue(event.target.value);
+    const email = event.target.value;
+    setEmailInputValue(email);
+
+    if (!isEmailValid(email)) {
+      setEmailErrorMsg('Email has an invalid format!');
+    }
   };
 
   const changeComment = (event) => {
@@ -48,20 +56,25 @@ const Comments = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const newComment = {
-      postId: Number(postId),
-      id: comments[comments.length - 1] ? comments[comments.length - 1].id + 1 : 0,
-      name: nameInputValue,
-      email: emailInputValue,
-      body: commentTextValue,
-    };
+    if (isEmailValid(emailInputValue) && nameInputValue && commentTextValue) {
+      const newComment = {
+        postId: Number(postId),
+        id: comments[comments.length - 1] ? comments[comments.length - 1].id + 1 : 0,
+        name: nameInputValue,
+        email: emailInputValue,
+        body: commentTextValue,
+      };
 
-    dispatch(addComment(newComment));
-    setComments([...comments, newComment]);
-    setNameInputValue('');
-    setEmailInputValue('');
-    setCommentTextValue('');
-    setMessage('Comment was added successfully!');
+      dispatch(addComment(newComment));
+      setComments([...comments, newComment]);
+      setNameInputValue('');
+      setEmailInputValue('');
+      setCommentTextValue('');
+      setEmailErrorMsg('');
+      setMessage([false, 'Comment was added successfully!']);
+    } else {
+      setMessage([true, 'All fields are required!']);
+    }
   };
 
   return (
@@ -91,12 +104,13 @@ const Comments = () => {
                   <input data-testid="inputName" id="name" className="input-name" name="name" type="text" value={nameInputValue} onChange={changeName} />
                   <label htmlFor="email">Email:</label>
                   <input data-testid="inputEmail" id="email" className="input-email" name="email" type="email" value={emailInputValue} onChange={changeEmail} />
+                  {emailErrorMsg && <p id="emailErrorMsg" className="errorMsg">{emailErrorMsg}</p>}
                   <label htmlFor="comments">Comment:</label>
                   <textarea data-testid="inputComments" id="comments" className="comments" value={commentTextValue} onChange={changeComment} />
                   <div className="submit-container">
                     <input data-testid="buttonPublish" id="addComment" name="addComment" type="submit" value="Publish" />
                   </div>
-                  { message && <p className="message">{message}</p>}
+                  { message && <p id="message" className={message[0] ? 'errorMsg' : 'message'}>{message[1]}</p>}
                 </form>
               </div>
             </div>

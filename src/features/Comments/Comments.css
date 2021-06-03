@@ -28,4 +28,12 @@ input, textarea {
 
 .message {
     text-align: right;
+    color: #006400 !important;
+}
+
+.errorMsg {
+    position: relative;
+    top: -10px;
+    text-align: right;
+    color: #ff0000 !important;
 }

@@ -52,6 +52,10 @@ exports[`Comments component tests. Comments component renders correctly. 1`] = `
                   type="email"
                   value=""
                 />
+                <p
+                  class="errorMsg"
+                  id="emailErrorMsg"
+                />
                 <label
                   for="comments"
                 >

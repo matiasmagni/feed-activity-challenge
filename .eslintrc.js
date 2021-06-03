@@ -22,6 +22,7 @@ module.exports = {
     ],
     "rules": {
         "no-console": "off",
+        "import/prefer-default-export": "off",
         "jest/no-disabled-tests": "warn",
         "jest/no-focused-tests": "error",
         "jest/no-identical-title": "error",
