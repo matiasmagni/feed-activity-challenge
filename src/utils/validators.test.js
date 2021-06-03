@@ -24,13 +24,13 @@ const invalidValues = {
 afterEach(cleanup);
 
 describe('Validators tests.', () => {
-  it('Email validator returns true on valid values.', async () => {
+  it('Email validator returns true on valid values.', () => {
     validValues.email.forEach(email => {
       expect(isEmailValid(email)).toBe(true);
     });
   });
 
-  it('Email validator returns false on invalid.', async () => {
+  it('Email validator returns false on invalid.', () => {
     invalidValues.email.forEach(email => {
       expect(isEmailValid(email)).toBe(false);
     });
